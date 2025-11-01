@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiber Internet - SolveForce Enterprise Solutions</title>
+    <meta name="description" content="High-speed fiber internet solutions for businesses. Dedicated Internet Access (DIA), Ethernet, and carrier-grade connectivity.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .header-content nav {
+            justify-self: end;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .header-phone {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .header-phone:hover {
+            color: #764ba2;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        .content {
+            background: white;
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .speed-tiers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .tier-card {
+            background: rgba(102, 126, 234, 0.1);
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .tier-card:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .tier-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .tier-card:hover h3 {
+            color: white;
+        }
+
+        .tier-card .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .tier-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 1rem 0;
+        }
+
+        .tier-card li {
+            padding: 0.5rem 0;
+        }
+
+        .tier-card li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .tier-card:hover li:before {
+            color: white;
+        }
+
+        .benefits {
+            background: rgba(102, 126, 234, 0.05);
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+
+        .benefits ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .benefits li {
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .benefits li:before {
+            content: "🚀";
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 968px) {
+            .header-content {
+                grid-template-columns: auto;
+                justify-items: center;
+                gap: 1rem;
+            }
+            
+            .header-content nav {
+                justify-self: center;
+            }
+            
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                margin: 0.5rem 1rem;
+            }
+
+            .features-grid,
+            .speed-tiers {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features-grid,
+            .speed-tiers {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">🌐 Fiber Internet</a>
+            <a href="tel:+18887658301" class="header-phone">📞 (888) 765-8301</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="speeds.html">Speeds</a>
+                <a href="availability.html">Availability</a>
+                <a href="business.html">Business</a>
+                <a href="https://portal.solveforce.com">Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Enterprise Fiber Internet Solutions</h1>
+        <p>Dedicated, symmetrical, carrier-grade connectivity for mission-critical operations</p>
+        <div class="cta-buttons">
+            <a href="tel:+18887658301" class="btn btn-primary">📞 Get a Quote</a>
+            <a href="availability.html" class="btn btn-secondary">🗺️ Check Availability</a>
+            <a href="https://portal.solveforce.com" class="btn btn-secondary">🌐 SolveForce Portal</a>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <h2>Why Fiber Internet?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>⚡ Lightning Fast</h3>
+                    <p>Symmetrical speeds up to 100 Gbps for uploads and downloads with fiber optic technology</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 Dedicated Connection</h3>
+                    <p>Your bandwidth is guaranteed - not shared with neighbors or other businesses</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📈 99.99% Uptime</h3>
+                    <p>Carrier-grade SLA with redundancy, monitoring, and rapid restoration</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🚀 Low Latency</h3>
+                    <p>Sub-10ms latency for real-time applications, VoIP, and cloud services</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Scalable</h3>
+                    <p>Easily upgrade bandwidth as your business grows without infrastructure changes</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💰 Cost Effective</h3>
+                    <p>Lower total cost of ownership compared to legacy connectivity solutions</p>
+                </div>
+            </div>
+
+            <h2>Fiber Internet Speed Tiers</h2>
+            <div class="speed-tiers">
+                <div class="tier-card">
+                    <h3>100 Mbps</h3>
+                    <p class="price">Starting at $500/mo</p>
+                    <ul>
+                        <li>Symmetrical bandwidth</li>
+                        <li>99.9% uptime SLA</li>
+                        <li>24/7 monitoring</li>
+                        <li>Static IP included</li>
+                        <li>Perfect for small offices</li>
+                    </ul>
+                    <a href="tel:+18887658301" class="btn btn-primary" style="margin-top: 1rem;">Get Quote</a>
+                </div>
+                <div class="tier-card">
+                    <h3>1 Gbps</h3>
+                    <p class="price">Starting at $1,500/mo</p>
+                    <ul>
+                        <li>Symmetrical gigabit speed</li>
+                        <li>99.99% uptime SLA</li>
+                        <li>Priority support</li>
+                        <li>/29 IP block included</li>
+                        <li>Ideal for enterprises</li>
+                    </ul>
+                    <a href="tel:+18887658301" class="btn btn-primary" style="margin-top: 1rem;">Get Quote</a>
+                </div>
+                <div class="tier-card">
+                    <h3>10 Gbps</h3>
+                    <p class="price">Custom pricing</p>
+                    <ul>
+                        <li>10G symmetrical fiber</li>
+                        <li>99.99% uptime guarantee</li>
+                        <li>Dedicated account team</li>
+                        <li>Custom IP allocation</li>
+                        <li>Data center grade</li>
+                    </ul>
+                    <a href="tel:+18887658301" class="btn btn-primary" style="margin-top: 1rem;">Get Quote</a>
+                </div>
+            </div>
+
+            <div class="benefits">
+                <h2>Enterprise Features Included</h2>
+                <ul>
+                    <li>Static IP addresses (single or block)</li>
+                    <li>24/7/365 network operations center (NOC) monitoring</li>
+                    <li>Service Level Agreement (SLA) with uptime guarantee</li>
+                    <li>Managed router options available</li>
+                    <li>BGP routing for advanced connectivity</li>
+                    <li>Diverse path options for redundancy</li>
+                    <li>MPLS and SD-WAN integration</li>
+                    <li>Free installation in select metro areas</li>
+                    <li>No data caps or throttling</li>
+                    <li>Priority technical support</li>
+                    <li>Online portal for service management</li>
+                    <li>Scalable bandwidth on demand</li>
+                </ul>
+            </div>
+
+            <h2>Perfect For</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🏢 Offices</h3>
+                    <p>Support hundreds of concurrent users with consistent performance</p>
+                </div>
+                <div class="feature-card">
+                    <h3>☁️ Cloud Services</h3>
+                    <p>Fast, reliable access to AWS, Azure, Google Cloud, and private clouds</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📞 VoIP Systems</h3>
+                    <p>Crystal-clear voice quality with guaranteed bandwidth and low latency</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎥 Video Conferencing</h3>
+                    <p>HD video calls without buffering or dropped connections</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🗄️ Data Centers</h3>
+                    <p>High-capacity connections for colocation and hosting facilities</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏥 Healthcare</h3>
+                    <p>HIPAA-compliant connectivity for medical imaging and EHR systems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SolveForce. All rights reserved.</p>
+        <div class="contact-info">
+            <a href="tel:+18887658301">📞 (888) 765-8301</a>
+            <a href="mailto:contact@solveforce.com">📧 contact@solveforce.com</a>
+            <a href="https://portal.solveforce.com">🌐 Portal</a>
+            <a href="https://solveforceapp.github.io/SolveForce.com/">📖 Documentation</a>
+        </div>
+    </footer>
+</body>
+</html>
