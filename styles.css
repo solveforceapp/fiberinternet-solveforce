@@ -1,0 +1,511 @@
+:root {
+    --primary: #667eea;
+    --secondary: #764ba2;
+    --text: #333333;
+    --light: rgba(255, 255, 255, 0.95);
+    --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: var(--gradient);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: var(--light);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-content nav {
+    justify-self: end;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.header-phone {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.header-phone:hover {
+    color: var(--secondary);
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+.hero {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    opacity: 0.95;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: white;
+    color: var(--primary);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: var(--primary);
+}
+
+.content {
+    background: white;
+    padding: 4rem 2rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text);
+}
+
+.features-grid,
+.speed-tiers,
+.speed-overview,
+.availability-grid,
+.modules,
+.steps,
+.solutions-grid,
+.process {
+    display: grid;
+    gap: 2rem;
+}
+
+.features-grid,
+.speed-tiers,
+.speed-overview,
+.availability-grid,
+.solutions-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.modules,
+.steps,
+.process {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.feature-card {
+    background: var(--gradient);
+    padding: 2rem;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.25);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.speed-tiers {
+    margin: 3rem 0;
+}
+
+.tier-card {
+    background: rgba(102, 126, 234, 0.1);
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.tier-card:hover {
+    background: var(--gradient);
+    color: white;
+    transform: scale(1.05);
+}
+
+.tier-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.tier-card:hover h3 {
+    color: white;
+}
+
+.tier-card .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.tier-card ul,
+.card ul,
+.module ul,
+.solution ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tier-card li,
+.card li,
+.module li,
+.solution li {
+    padding: 0.5rem 0;
+    padding-left: 1.8rem;
+    position: relative;
+}
+
+.tier-card li::before,
+.module li::before {
+    content: '✓';
+    color: var(--primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.card {
+    background: var(--gradient);
+    padding: 2rem;
+    border-radius: 15px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.25);
+}
+
+.card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.card--speeds li::before {
+    content: '⚡';
+}
+
+.card--availability li::before {
+    content: '📍';
+}
+
+.solution li::before {
+    content: '🏢';
+    position: absolute;
+    left: 0;
+}
+
+.modules .module {
+    background: rgba(102, 126, 234, 0.1);
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+.modules .module h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.benefits {
+    background: rgba(102, 126, 234, 0.05);
+    padding: 3rem;
+    border-radius: 15px;
+    margin: 3rem 0;
+}
+
+.benefits ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.benefits li {
+    padding-left: 2rem;
+    position: relative;
+}
+
+.benefits li::before {
+    content: '🚀';
+    position: absolute;
+    left: 0;
+}
+
+.steps .step,
+.process-step {
+    background: rgba(102, 126, 234, 0.1);
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+}
+
+.steps .step h3,
+.process-step h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.coverage-map {
+    background: rgba(102, 126, 234, 0.08);
+    border-radius: 15px;
+    padding: 3rem;
+    margin: 3rem 0;
+}
+
+.coverage-map ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding-left: 0;
+}
+
+.coverage-map li {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.coverage-map li::before {
+    content: '🛰️';
+    position: absolute;
+    left: 0;
+}
+
+.solutions-grid .solution {
+    background: var(--gradient);
+    color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.25);
+}
+
+.industries {
+    background: rgba(102, 126, 234, 0.08);
+    border-radius: 15px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+}
+
+.industries-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding-left: 0;
+}
+
+.industries-list li {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.industries-list li::before {
+    content: '🏭';
+    position: absolute;
+    left: 0;
+}
+
+.process {
+    margin: 3rem 0;
+}
+
+.process-step p {
+    margin: 0;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1.25rem;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    text-align: left;
+    background: white;
+}
+
+.comparison-table thead {
+    background: rgba(102, 126, 234, 0.15);
+}
+
+.comparison-table tbody tr:nth-child(odd) {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+footer {
+    background: var(--light);
+    padding: 2rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.contact-info {
+    margin-top: 1rem;
+}
+
+.contact-info a {
+    color: var(--primary);
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 968px) {
+    .header-content {
+        grid-template-columns: auto;
+        justify-items: center;
+        gap: 1rem;
+    }
+
+    .header-content nav {
+        justify-self: center;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 0.5rem 1rem;
+    }
+
+    .features-grid,
+    .speed-tiers,
+    .speed-overview,
+    .availability-grid,
+    .modules,
+    .steps,
+    .solutions-grid,
+    .process {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits ul,
+    .coverage-map ul,
+    .industries-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .comparison-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
