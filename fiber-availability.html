@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiber Availability Guide - SolveForce</title>
+    <meta name="description" content="Explore SolveForce's nationwide fiber availability with metro coverage highlights, state-by-state resources, and guidance for enterprise deployments.">
+    <link rel="canonical" href="https://fiberinternet.solveforce.com/fiber-availability.html">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header-content nav {
+            justify-self: end;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .header-phone {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .header-phone:hover {
+            color: #764ba2;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            max-width: 860px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        .content {
+            background: white;
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 2.5rem;
+            color: #333;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .overview-card {
+            background: linear-gradient(145deg, #f4f6ff, #ffffff);
+            border-radius: 18px;
+            padding: 2rem;
+            box-shadow: 0 20px 30px rgba(102, 126, 234, 0.15);
+        }
+
+        .overview-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #4c51bf;
+        }
+
+        .overview-card ul {
+            list-style: none;
+        }
+
+        .overview-card li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .overview-card li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        .metro-section {
+            margin-bottom: 4rem;
+        }
+
+        .metro-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .metro-list li {
+            background: #f8f8ff;
+            border-radius: 14px;
+            padding: 1.4rem;
+            box-shadow: 0 12px 22px rgba(118, 75, 162, 0.12);
+        }
+
+        .metro-list strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+            color: #4c51bf;
+        }
+
+        .state-directory {
+            margin-bottom: 4rem;
+        }
+
+        .state-directory table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px rgba(102, 126, 234, 0.12);
+        }
+
+        .state-directory th,
+        .state-directory td {
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+        }
+
+        .state-directory th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .state-directory tr:nth-child(even) {
+            background: #f4f6ff;
+        }
+
+        .state-directory tr:nth-child(odd) {
+            background: white;
+        }
+
+        .state-directory td strong {
+            color: #4c51bf;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .step-card {
+            background: linear-gradient(160deg, #ffffff, #f4f1ff);
+            border-radius: 18px;
+            padding: 1.8rem;
+            box-shadow: 0 18px 30px rgba(118, 75, 162, 0.15);
+        }
+
+        .step-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #4c51bf;
+        }
+
+        .resource-callout {
+            background: linear-gradient(120deg, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.18));
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 25px 45px rgba(76, 81, 191, 0.18);
+            text-align: center;
+        }
+
+        .resource-callout h2 {
+            margin-bottom: 1.2rem;
+        }
+
+        .resource-callout p {
+            margin-bottom: 2rem;
+            font-size: 1.15rem;
+            color: #444;
+        }
+
+        footer {
+            padding: 2.5rem 2rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            margin-top: auto;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        footer .contact-info {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: #764ba2;
+        }
+
+        @media (max-width: 1024px) {
+            .overview-grid,
+            .metro-list,
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .header-content nav {
+                justify-self: center;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .overview-grid,
+            .metro-list,
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .state-directory table {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/index.html" class="logo">🌐 Fiber Internet</a>
+            <a href="tel:+18887658301" class="header-phone">📞 (888) 765-8301</a>
+            <nav>
+                <a href="/index.html">Home</a>
+                <a href="/speeds.html">Speeds</a>
+                <a href="/availability.html">Availability</a>
+                <a href="/fiber-availability.html">Fiber Guide</a>
+                <a href="/business.html">Business</a>
+                <a href="https://portal.solveforce.com">Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Fiber Availability Resource Center</h1>
+        <p>Leverage SolveForce's nationwide ecosystem of carriers, lit buildings, and construction partners to qualify fiber service for single sites and distributed enterprises.</p>
+        <div class="cta-buttons">
+            <a href="tel:+18887658301" class="btn btn-primary">Talk to a Fiber Specialist</a>
+            <a href="https://portal.solveforce.com" class="btn btn-secondary">Upload Address List</a>
+            <a href="/availability.html" class="btn btn-secondary">Check Real-Time Status</a>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <h2>Nationwide Coverage Snapshot</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Lit &amp; Near-Net Buildings</h3>
+                    <ul>
+                        <li>20,000+ verified on-net commercial buildings</li>
+                        <li>Rapid turn-up with zero build cost when fiber is already in the riser</li>
+                        <li>Near-net extensions under 1,000 feet with optimized construction pricing</li>
+                    </ul>
+                </div>
+                <div class="overview-card">
+                    <h3>Carrier Ecosystem</h3>
+                    <ul>
+                        <li>Access to 200+ regional, national, and global fiber operators</li>
+                        <li>Dedicated wavelength, DIA, dark fiber, and Ethernet services</li>
+                        <li>Integrated quoting across tier 1, tier 2, and utility providers</li>
+                    </ul>
+                </div>
+                <div class="overview-card">
+                    <h3>Industry Expertise</h3>
+                    <ul>
+                        <li>Field engineering support for construction and right-of-way</li>
+                        <li>Project management from qualification through activation</li>
+                        <li>SLAs tailored for education, government, healthcare, and logistics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="metro-section">
+                <h2>Metro Fiber Highlights</h2>
+                <ul class="metro-list">
+                    <li>
+                        <strong>Los Angeles &amp; Orange County</strong>
+                        Dense downtown loops, data center access on One Wilshire, and extensive last-mile coverage for media and entertainment campuses.
+                    </li>
+                    <li>
+                        <strong>Dallas–Fort Worth</strong>
+                        Carrier hotels in Downtown Dallas, reach into Frisco and Plano technology corridors, and express routes to regional logistics hubs.
+                    </li>
+                    <li>
+                        <strong>Chicago &amp; Great Lakes</strong>
+                        350 Cermak carrier hotel interconnects, redundant rings around O'Hare, and municipal partnerships supporting smart city initiatives.
+                    </li>
+                    <li>
+                        <strong>Atlanta &amp; Southeast</strong>
+                        High-count fiber throughout Peachtree corridor, hyperscale data center access, and fast deployment for growing distribution networks.
+                    </li>
+                    <li>
+                        <strong>New York &amp; Northeast</strong>
+                        Manhattan riser access, Hudson River crossings, and diversified routes into New Jersey, Connecticut, and Boston markets.
+                    </li>
+                    <li>
+                        <strong>Phoenix &amp; Mountain West</strong>
+                        Expanding metro fiber for semiconductor manufacturing, with route diversity into Las Vegas, Denver, and Southern California.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="state-directory">
+                <h2>State-by-State Fiber Directory</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: #555;">Use this quick reference to focus on states and metros where SolveForce has turnkey fiber, wavelength, and dark fiber solutions ready to deploy.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Region</th>
+                            <th>Key States</th>
+                            <th>Featured Metros</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>West Coast</strong></td>
+                            <td>California, Washington, Oregon</td>
+                            <td>Los Angeles, San Jose, Seattle, Portland</td>
+                            <td>On-net presence in major tech corridors with diverse long-haul paths.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Southwest</strong></td>
+                            <td>Arizona, Nevada, New Mexico</td>
+                            <td>Phoenix, Las Vegas, Albuquerque</td>
+                            <td>Fast-track construction for manufacturing and data center developments.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Central</strong></td>
+                            <td>Texas, Oklahoma, Missouri, Kansas</td>
+                            <td>Dallas, Houston, Austin, Oklahoma City</td>
+                            <td>Energy sector fiber backbones with access to Tier III and IV facilities.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Midwest</strong></td>
+                            <td>Illinois, Ohio, Michigan, Minnesota</td>
+                            <td>Chicago, Columbus, Detroit, Minneapolis</td>
+                            <td>Industrial and logistics connectivity with redundant regional rings.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Southeast</strong></td>
+                            <td>Georgia, Florida, North Carolina, Tennessee</td>
+                            <td>Atlanta, Miami, Charlotte, Nashville</td>
+                            <td>Healthcare, education, and public sector networks across metro and rural markets.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Northeast</strong></td>
+                            <td>New York, New Jersey, Massachusetts, Pennsylvania</td>
+                            <td>New York City, Newark, Boston, Philadelphia</td>
+                            <td>Financial-grade latency options with cross-border routes into Canada.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mountain &amp; Plains</strong></td>
+                            <td>Colorado, Utah, Nebraska, South Dakota</td>
+                            <td>Denver, Salt Lake City, Omaha, Sioux Falls</td>
+                            <td>Carrier-neutral meet-me rooms supporting cloud and edge deployments.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mid-Atlantic</strong></td>
+                            <td>Virginia, Maryland, District of Columbia</td>
+                            <td>Washington D.C., Ashburn, Baltimore</td>
+                            <td>Federal, defense, and hyperscale infrastructure with dark fiber options.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <h3>1. Identify Targets</h3>
+                    <p>Upload full address lists or GIS files to prioritize on-net, near-net, and construction-required sites.</p>
+                </div>
+                <div class="step-card">
+                    <h3>2. Analyze Providers</h3>
+                    <p>Compare SLAs, fiber counts, and pricing from incumbent, competitive, and municipal carriers.</p>
+                </div>
+                <div class="step-card">
+                    <h3>3. Engineer Routes</h3>
+                    <p>Collaborate with SolveForce engineers on lateral builds, redundant entrances, and permit strategy.</p>
+                </div>
+                <div class="step-card">
+                    <h3>4. Activate Services</h3>
+                    <p>Coordinate site readiness, cross-connects, and service acceptance with a dedicated project manager.</p>
+                </div>
+            </div>
+
+            <div class="resource-callout">
+                <h2>Need a Detailed Fiber Availability Report?</h2>
+                <p>Our documentation portal houses fiber maps, carrier onboarding guides, and compliance resources. Combine it with SolveForce's project team to accelerate complex deployments.</p>
+                <div class="cta-buttons" style="margin-top: 1rem;">
+                    <a href="https://solveforceapp.github.io/SolveForce.com/" class="btn btn-primary">Explore Documentation</a>
+                    <a href="mailto:contact@solveforce.com" class="btn btn-secondary">Request Custom Report</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SolveForce. All rights reserved.</p>
+        <div class="contact-info">
+            <a href="tel:+18887658301">📞 (888) 765-8301</a>
+            <a href="mailto:contact@solveforce.com">📧 contact@solveforce.com</a>
+            <a href="https://portal.solveforce.com">🌐 Portal</a>
+            <a href="https://solveforceapp.github.io/SolveForce.com/">📖 Documentation</a>
+        </div>
+    </footer>
+</body>
+</html>
